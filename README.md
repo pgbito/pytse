@@ -14,7 +14,7 @@ jose maria,figueres,ferrer
 ```python
 import csv
 from datetime import datetime
-from pytse.tse import PyTse
+from pytse2_0.tse import PyTse
 
 client = PyTse()
 
@@ -35,8 +35,8 @@ with open('input.csv', newline='') as csvfile:
             ) ), key=lambda x: x[1])# Cambia las fechas de nacimiento a cumpleaños y las ordena de la mas cercana a la mas lejana
 
     now = datetime.now()
-    ya_cumplieron = tuple(filter(lambda row: row[1] < now, rows))  # se fija en las personas que ya cumplieron
-    cumpliran = tuple(filter(lambda row: row not in ya_cumplieron, rows))
+    cumpliran = tuple(filter(lambda row: row[1] >now, rows))  # se fija en las personas que ya cumplieron
+
 
 
     def diferencia(original_date, now):
@@ -48,7 +48,8 @@ with open('input.csv', newline='') as csvfile:
 
     for nombre, dt in cumpliran:
             c = diferencia(dt, now)
-            print(("Dias para el cumpleaños de {name}:" + str(c) + " days").format(name=nombre))
+            print(dt)
+            print(("Dias para el cumpleaños de {name}: {dias} days ({cumpl})").format(name=nombre,dias=c,cumpl=dt))
 
 
 ```
