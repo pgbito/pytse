@@ -6,7 +6,7 @@ Python Wrapper para interactuar con el sitio web de servicios electorales del Tr
 Podés encontrar ayuda **[aca](https://pytsecr.readthedocs.io/)**, abrir un **[Issue](https://github.com/pgbito/pytsecr/issues/new)** en este repositorio, o contactarme en **[Mi Telegram](https://t.me/pgbito)**
 ## Ejemplo: Buscar cumpleaños siguientes:
 ```csv
-#input.csv
+# input.csv
 carlos,alvarado,quesada
 rodrigo,chaves,robles
 jose maria,figueres,ferrer
